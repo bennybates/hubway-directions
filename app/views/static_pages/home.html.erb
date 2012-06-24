@@ -1,13 +1,22 @@
+ <% provide(:title, 'Home') %>
   <div class="center hero-unit">  
-    <h1>Welcome to the Sample App</h1>
+    <h1>Welcome to Hubway Directions</h1>
     <h2>
-      This is the home page for the
-      <a href="http://railstutorial.org/">Ruby on Rails Tutorial</a>
-      sample application.
+      Are you trying to find the quickest way to get from here to there using
+      <a href="http://thehubway.com/">Hubway</a>?
     </h2>
-    <% if !signed_in? %>
-      <%= link_to "Sign up now!", signup_path, class: "btn btn-large btn-primary" %>
-    <% end %>
-  </div>
+    <div class="row">
 
-  <%= link_to image_tag("rails.png", alt: "Rails"), 'http://rubyonrails.org/' %>
+        <%= form_for(:destination, url: "#") do |f| %>
+
+          <%= f.label :from %>
+          <%= f.text_field :from %>
+
+          <%= f.label :to %>
+          <%= f.text_field :to %>
+
+         <p> <%= f.submit "Submit", class: "btn btn-large btn-primary" %></p>
+
+        <% end %>
+    </div>
+  </div>
