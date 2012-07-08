@@ -25,6 +25,14 @@ class GoogleDirections
     @status == 'OK'
   end
 
+  def start_latitude
+    @directions[ 'route' ][ 'leg' ][ 'start_location' ][ 'lat' ]
+  end
+
+  def start_longitude
+    @directions[ 'route' ][ 'leg' ][ 'start_location' ][ 'lng' ]
+  end
+
   def path  
     @directions[ 'route' ][ 'overview_polyline' ][ 'points' ]
   end
